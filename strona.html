@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Strona Policji</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #0056b3;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        nav {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: #FFD700;
+        }
+        section {
+            padding: 20px;
+            margin: 10px auto;
+            max-width: 800px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        h1, h2, h3 {
+            color: #0056b3;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            padding: 5px 0;
+        }
+        .hidden {
+            display: none;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .map-container {
+            text-align: center;
+        }
+        .map-container img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #0056b3;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Strona Policji</h1>
+    </header>
+    <nav>
+        <a href="#notebook">Notatnik</a>
+        <a href="#tariff">Taryfikator</a>
+        <a href="#map">Mapa</a>
+        <a href="#wanted">Poszukiwani</a>
+        <a href="#lost">Zagubieni</a>
+    </nav>
+    <section id="notebook">
+        <h2>Notatnik</h2>
+        <p>FAJNA STRONAAAA</p>
+        <p>FAJNA STRONAAAA</p>
+        <p>FAJNA STRONAAAA</p>
+        <p>FAJNA STRONAAAA</p>
+        <p>FAJNA STRONAAAA</p>
+        <p>FAJNA STRONAAAA</p>
+    </section>
+    <section id="tariff" class="hidden">
+        <h2>Taryfikator</h2>
+        <table>
+            <tr>
+                <th>Wykroczenie</th>
+                <th>Grzywna</th>
+            </tr>
+            <tr>
+                <td>Przekroczenie prędkości</td>
+                <td>500 PLN</td>
+            </tr>
+            <tr>
+                <td>Nieprawidłowe parkowanie</td>
+                <td>200 PLN</td>
+            </tr>
+            <tr>
+                <td>Jazda bez pasów bezpieczeństwa</td>
+                <td>300 PLN</td>
+            </tr>
+            <tr>
+                <td>Rozmowa przez telefon podczas jazdy</td>
+                <td>400 PLN</td>
+            </tr>
+            <tr>
+                <td>Nieustąpienie pierwszeństwa</td>
+                <td>500 PLN</td>
+            </tr>
+            <tr>
+                <td>Przejazd na czerwonym świetle</td>
+                <td>700 PLN</td>
+            </tr>
+            <tr>
+                <td>Jazda pod wpływem alkoholu</td>
+                <td>5000 PLN</td>
+            </tr>
+            <tr>
+                <td>Brak uprawnień do kierowania</td>
+                <td>800 PLN</td>
+            </tr>
+            <tr>
+                <td>Przekroczenie prędkości w strefie zabudowanej</td>
+                <td>1000 PLN</td>
+            </tr>
+            <tr>
+                <td>Naruszenie przepisów o ruchu pieszych</td>
+                <td>100 PLN</td>
+            </tr>
+            <tr>
+                <td>Używanie środków odurzających podczas jazdy</td>
+                <td>6000 PLN</td>
+            </tr>
+            <tr>
+                <td>Utrudnianie ruchu drogowego</td>
+                <td>300 PLN</td>
+            </tr>
+        </table>
+    </section>
+    <section id="map" class="hidden">
+        <h2>Mapa</h2>
+        <div class="map-container">
+            <img src="twoja_mapa.jpg" alt="Mapa">
+        </div>
+    </section>
+    <section id="wanted" class="hidden">
+        <h2>Poszukiwani</h2>
+        <p>Lista poszukiwanych osób:</p>
+    </section>
+    <section id="lost" class="hidden">
+        <h2>Zagubieni</h2>
+        <p>Lista zagubionych rzeczy:</p>
+    </section>
+
+    <script>
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelectorAll('section').forEach(section => section.classList.add('hidden'));
+                const targetId = this.getAttribute('href').substring(1);
+                document.getElementById(targetId).classList.remove('hidden');
+            });
+        });
+    </script>
+    <footer>
+        <p>&copy; 2024 Policja. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+</body>
+</html>
